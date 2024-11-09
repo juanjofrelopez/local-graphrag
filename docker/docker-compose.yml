@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  knowledge-graph-generator:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../data:/app/data
+    environment:
+      - GOOGLE_API_KEY=
+      - OPENAI_API_KEY=
+    depends_on:
+      - falkordb
+  falkordb:
+    image: falkordb/falkordb:edge
+    ports:
+      - "6379:6379"
+    volumes:
+      - falkordb_data:/data
+volumes:
+  falkordb_data:

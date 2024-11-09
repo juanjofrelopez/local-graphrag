@@ -1,0 +1,4 @@
+graphrag_sdk 
+unstructured[pdf,docx,pptx,md]
+python-dotenv
+pytest
