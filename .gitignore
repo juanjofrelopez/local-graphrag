@@ -5,4 +5,3 @@ data
 logs
 .venv
 .DS_Store
-db/files
